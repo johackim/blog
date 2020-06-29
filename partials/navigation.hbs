@@ -1,0 +1,9 @@
+{{#if isSecondary}}
+    {{#foreach navigation }}
+    <a href="{{url absolute="true"}}" class="mr-6{{#if current}} active{{/if}}">{{label}}</a>
+    {{/foreach}}
+{{else}}
+    {{#foreach navigation}}
+    <a href="{{url absolute="true"}}" class="mr-6 hidden lg:inline {{#if current}} active{{/if}}">{{label}}</a>
+    {{/foreach}}
+{{/if}}

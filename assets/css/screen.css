@@ -1,0 +1,214 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+::selection {
+    @apply bg-gray-800 text-gray-400;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Roboto Light'), local('Roboto-Light'), url('../fonts/roboto-light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url('../fonts/roboto-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto Medium'), local('Roboto-Medium'), url('../fonts/roboto-medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto Bold'), local('Roboto-Bold'), url('../fonts/roboto-bold.woff2') format('woff2');
+}
+
+/* Body */
+
+body {
+    font-family: 'Roboto';
+    @apply bg-gray-900 text-gray-300;
+}
+
+body {
+    @apply h-screen flex flex-col justify-between;
+}
+
+body.home-template header {
+    @apply static;
+}
+
+/* Sticky footer */
+
+body:not(.home-template) main {
+    flex: 1;
+}
+
+/* Active links */
+
+header a.active, header a:hover {
+    @apply text-white;
+}
+
+/* Content */
+
+#content h1, h2, h3, h4, h5, h6 {
+    @apply mb-4;
+}
+
+#content h1 {
+    @apply text-3xl font-bold;
+}
+
+#content h2 {
+    @apply text-2xl font-bold;
+}
+
+#content h3 {
+    @apply text-xl font-bold;
+}
+
+#content p {
+    @apply mb-8 leading-relaxed;
+}
+
+#content ul {
+    @apply list-inside list-disc ml-8 mb-4;
+}
+
+#content li {
+    @apply my-2;
+}
+
+#content .kg-gallery-row {
+    @apply flex;
+}
+
+#content .kg-gallery-image {
+    @apply p-2;
+}
+
+#content a {
+    @apply text-white underline;
+}
+
+#content .kg-width-wide,
+#content .kg-width-full,
+#content .kg-gallery-container {}
+
+/* Bookmark */
+
+#content .kg-bookmark-author,
+#content .kg-bookmark-publisher { }
+
+#content .kg-bookmark-card {
+    @apply border border-solid border-gray-800;
+    @apply my-4;
+}
+
+#content .kg-bookmark-container {
+    @apply flex no-underline;
+}
+
+#content .kg-bookmark-title {
+    @apply font-bold border-none;
+}
+
+#content .kg-bookmark-description {
+    @apply text-sm mt-2 overflow-y-hidden;
+    max-height: 46px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+#content .kg-bookmark-content {
+    @apply grid;
+    @apply p-4;
+}
+
+#content .kg-bookmark-container .kg-bookmark-icon {
+    @apply w-6 h-6 mr-2;
+}
+
+#content .kg-bookmark-metadata {
+    @apply flex mt-2;
+}
+
+#content .kg-bookmark-thumbnail {
+    @apply relative max-h-full;
+    min-width: 33%;
+}
+
+#content .kg-bookmark-thumbnail img {
+    @apply absolute top-0 left-0 w-full h-full object-cover;
+    border-radius: 0 3px 3px 0;
+}
+
+#content .kg-image-card {
+    @apply my-4;
+}
+
+#content .kg-image-card img {
+    opacity: 0.9;
+}
+
+#content pre {
+    @apply bg-black px-4 py-2 my-4 text-sm;
+}
+
+#content pre code {
+    @apply p-0;
+}
+
+#content code {
+    @apply bg-black whitespace-pre-wrap;
+    padding: 2px 6px;
+}
+
+/* Blockquote */
+
+#content blockquote {
+    @apply border-l-4 border-gray-700 pl-4 my-6 text-lg;
+}
+
+em {
+    @apply italic;
+}
+
+/* Subscribe */
+
+form[data-members-form=subscribe] .button-loader,
+form[data-members-form=subscribe] .message-success,
+form[data-members-form=subscribe] .message-error {
+    @apply hidden;
+}
+
+form[data-members-form=subscribe].loading .button-content {
+    @apply hidden;
+}
+
+form[data-members-form=subscribe].loading .button-loader {
+    @apply block;
+}
+
+form[data-members-form=subscribe].error .message-error {
+    @apply block;
+}
+
+form[data-members-form=subscribe].success .message-success {
+    @apply block;
+}

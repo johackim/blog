@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    {{> "notification"}}
+    {{> "modal"}}
+
+    <header class="flex shadow-lg fixed top-0 inset-x-0 h-16 items-center z-10 bg-gray-900">
+        <div class="container m-auto flex items-center justify-between flex-wrap px-4 lg:max-w-screen-md">
+            <a href="/" class="text-black hover:text-black">
+                <div class="flex items-center">
+                    <img src="{{@site.logo}}" alt="logo" class="rounded-full w-12" />
+                    <div class="ml-2 text-white">
+                        <div class="font-bold leading-none">{{@site.title}}</div>
+                        <div class="text-sm leading-none">{{@site.description}}</div>
+                    </div>
+                </div>
+            </a>
+            <div>
+                {{navigation}}
+                {{#if @labs.members}}
+                    <a href="#subscribe" class="border rounded-md px-3 py-1 hover:border-white subscribe">{{ t "Subscribe" }}</a>
+                {{/if}}
+            </div>
+        </div>
+    </header>
+
+    <main>{{{body}}}</main>
+
+    <footer>
+        <div class="container m-auto px-5 py-8 flex items-center justify-between flex-wrap lg:max-w-screen-md">
+            <div><span class="inline-block transform rotate-180 align-middle">&copy;</span> 2017-{{date format="YYYY"}}</div>
+            <nav class="flex">
+                {{navigation type="secondary"}}
+                {{#if @site.twitter }}
+                {{!--  custom  --}}
+                <a href="{{twitter_url}}" target="_blank">
+                    <img src="{{asset "images/twitter.svg"}}" alt="twitter" class="h-5 w-5 mr-2" />
+                </a>
+                <a class="social-link" href="https://mastodon.ethibox.fr/@johackim" target="_blank" rel="noopener">
+                    <img src="{{asset "images/mastodon.svg"}}" alt="mastodon" class="h-5 w-5 mr-2" />
+                </a>
+                <a class="social-link" href="https://t.me/johackim" target="_blank" rel="noopener">
+                    <img src="{{asset "images/telegram.svg"}}" alt="telegram" class="h-5 w-5 mr-2" />
+                </a>
+                <a class="social-link" href="https://github.com/johackim" target="_blank" rel="noopener">
+                    <img src="{{asset "images/github.svg"}}" alt="github" class="h-5 w-5 mr-2" />
+                </a>
+                <a class="social-link rss-button" href="/rss/" title="RSS" target="_blank" rel="noopener">
+                    <img src="{{asset "images/rss.svg"}}" alt="rss" class="h-5 w-5 mr-2" />
+                </a>
+                {{!--  End custom  --}}
+                {{/if}}
+            </nav>
+        </div>
+    </footer>
+
+    <script src="{{asset "built/script.js"}}"></script>
+
+    {{ghost_foot}}
+</body>
+</html>

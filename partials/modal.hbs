@@ -1,0 +1,25 @@
+<div class="fixed inset-x-0 px-4 pb-6 inset-0 p-0 flex items-center justify-center z-20 invisible modal">
+    <div class="fixed inset-0 transition-opacity">
+        <div class="absolute inset-0 bg-black opacity-90"></div>
+        <div class="absolute top-0 right-0 p-8">
+            <img src="{{asset "images/cross.svg"}}" alt="close" class="h-12 w-12 cursor-pointer close" />
+        </div>
+    </div>
+    <div class="transform text-center text-white lg:max-w-screen-lg">
+        <h1 class="text-2xl lg:text-6xl font-medium">{{{ t "Join the <span class='subscribers'></span> subscribers" }}}</h1>
+        <p class="text-base lg:text-3xl">{{ t "Simply receive my articles directly in your mailbox" }}.</p>
+        <form data-members-form="subscribe">
+            <div class="my-4 flex flex-col md:flex-row justify-center gap-2">
+                <input type="email" data-members-email class="p-2 lg:p-4 rounded-md text-black" placeholder="{{ t "Enter your email" }}" autofocus required />
+                <button type="submit" class="bg-gray-800 p-2 lg:p-4 rounded-md">
+                    <span class="button-content">{{ t "Receive articles by e-mail" }}</span>
+                    <span class="button-loader"><img src="{{asset "images/loader.svg"}}" alt="loader" class="h-6 w-6 inline" /></span>
+                </button>
+            </div>
+            <p class="message-error text-red-600 my-4">{{ t "Please enter a valid email address!" }}</p>
+            <p class="message-success text-green-600 my-4"><b>{{ t "Great!" }}</b> {{t "Check your inbox and click the link to confirm your subscription." }}</p>
+        </form>
+        <p class="text-xs">🔒 {{ t "100% secure - Your email address will never be transferred or resold" }}.</p>
+        <p class="text-xs">{{ t "You are free to unsubscribe at any time with one click" }}.</p>
+    </div>
+</div>
