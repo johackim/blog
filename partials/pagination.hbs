@@ -7,7 +7,7 @@
             {{> "icons/chevron" }}
         </li>
         <li class="flex items-center">
-            <a href="/categories/">{{ t "Categories" }}</a>
+            <a href="/categories/">{{t "Categories"}}</a>
             {{> "icons/chevron" }}
         </li>
         <li class="flex items-center">
@@ -33,7 +33,7 @@
 <nav class="grid grid-cols-3 mt-4">
     <div class="flex">
         {{#if prev}}
-            <a href="{{page_url prev}}" class="inline-flex items-center text-sm font-medium hover:text-white">{{> "icons/prev" }} Previous</a>
+            <a href="{{page_url prev}}" class="inline-flex items-center text-sm font-medium hover:text-white">{{> "icons/prev" }} {{t "Previous"}}</a>
         {{/if}}
     </div>
     <div class="flex justify-center hidden{{next}}{{prev}}">
@@ -41,7 +41,7 @@
     </div>
     <div class="flex justify-end">
         {{#if next}}
-            <a href="{{page_url next}}" class="inline-flex items-center text-sm font-medium hover:text-white">Next {{> "icons/next" }}</a>
+            <a href="{{page_url next}}" class="inline-flex items-center text-sm font-medium hover:text-white">{{t "Next"}} {{> "icons/next" }}</a>
         {{/if}}
     </div>
 </nav>
@@ -56,11 +56,11 @@
             {{> "icons/chevron" }}
         </li>
         <li class="flex items-center">
-            <a href="/categories/">{{ t "Categories" }}</a>
+            <a href="/categories/">{{t "Categories"}}</a>
             {{> "icons/chevron" }}
         </li>
         <li class="flex items-center">
-            <a href="/all" class="text-gray-500{{pages.prev}}" aria-current="page">All</a>
+            <a href="/all" class="text-gray-500{{pages.prev}}" aria-current="page">{{t "All posts"}}</a>
             <span class="hidden{{pages.prev}}">{{> "icons/chevron" }}</span>
         </li>
         <li class="hidden{{pages.prev}}">
@@ -78,7 +78,7 @@
 <nav class="grid grid-cols-3 mt-4">
     <div class="flex">
         {{#if pages.prev}}
-            <a href="{{page_url pages.prev}}" class="inline-flex items-center text-sm font-medium hover:text-white">{{> "icons/prev" }} Previous</a>
+            <a href="{{page_url pages.prev}}" class="inline-flex items-center text-sm font-medium hover:text-white">{{> "icons/prev" }} {{t "Previous"}}</a>
         {{/if}}
     </div>
     <div class="flex justify-center hidden{{pages.next}}{{pages.prev}}">
@@ -86,7 +86,7 @@
     </div>
     <div class="flex justify-end">
         {{#if pages.next}}
-            <a href="{{page_url pages.next}}" class="inline-flex items-center text-sm font-medium hover:text-white">Next {{> "icons/next" }}</a>
+            <a href="{{page_url pages.next}}" class="inline-flex items-center text-sm font-medium hover:text-white">{{t "Next"}} {{> "icons/next" }}</a>
         {{/if}}
     </div>
 </nav>
