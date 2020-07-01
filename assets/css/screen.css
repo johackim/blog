@@ -59,7 +59,7 @@ body:not(.home-template) main {
 
 /* Active links */
 
-header a.active, header a:hover {
+a.active, a:hover {
     @apply text-white;
 }
 
@@ -103,10 +103,6 @@ header a.active, header a:hover {
 
 #content a {
     @apply text-white underline;
-}
-
-#content img {
-    @apply opacity-50 m-auto;
 }
 
 #content .kg-width-wide,
