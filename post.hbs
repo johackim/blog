@@ -3,7 +3,28 @@
 {{#post}}
 <section class="pt-20">
 	<div class="container m-auto px-4 lg:max-w-screen-md">
-        <h1 class="font-bold text-3xl mb-8">{{title}}</h1>
+        <nav class="mb-4 whitespace-no-wrap overflow-x-auto overflow-y-hidden">
+            <ol class="list-none p-0 inline-flex">
+                <li class="flex items-center">
+                    <a href="/">{{ t "Home" }}</a>
+                    {{> "icons/chevron" }}
+                </li>
+                <li class="flex items-center">
+                    <a href="/categories/">{{ t "Categories" }}</a>
+                    {{> "icons/chevron" }}
+                </li>
+                <li class="flex items-center">
+                    {{#primary_tag}}
+                        <a href="{{url}}" aria-current="page">{{name}}</a>
+                    {{/primary_tag}}
+                </li>
+            </ol>
+        </nav>
+
+        <div class="mb-8">
+            <h1 class="h-64 bg-gray-800 flex flex-col justify-center text-center font-bold px-2 lg:px-8 text-3xl">{{title}}</h1>
+        </div>
+
         <div id="content">{{content}}</div>
 	</div>
 </section>

@@ -23,6 +23,7 @@
     "devDependencies": {
         "@babel/core": "^7.9.0",
         "@babel/preset-env": "^7.9.0",
+        "@tailwindcss/ui": "^0.3.0",
         "babel-eslint": "^10.1.0",
         "babel-loader": "^8.1.0",
         "css-loader": "^3.4.2",
@@ -42,7 +43,7 @@
         "defaults"
     ],
     "config": {
-        "posts_per_page": 15,
+        "posts_per_page": 9,
         "image_sizes": {
             "xxs": {
                 "width": 30

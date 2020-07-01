@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </a>
-            <div>
+            <div class="flex justify-end items-center gap-4">
                 {{navigation}}
                 {{#if @labs.members}}
                     <a href="#subscribe" class="border rounded-md px-3 py-1 hover:border-white subscribe">{{ t "Subscribe" }}</a>
@@ -43,26 +43,26 @@
     <main>{{{body}}}</main>
 
     <footer>
-        <div class="container m-auto px-5 py-8 flex items-center justify-between flex-wrap lg:max-w-screen-md">
+        <div class="container m-auto px-4 py-8 flex items-center justify-between flex-wrap lg:max-w-screen-md">
             <div><span class="inline-block transform rotate-180 align-middle">&copy;</span> 2017-{{date format="YYYY"}}</div>
-            <nav class="flex">
+            <nav class="flex justify-end items-center gap-2">
                 {{navigation type="secondary"}}
                 {{#if @site.twitter }}
                 {{!--  custom  --}}
                 <a href="{{twitter_url}}" target="_blank">
-                    <img src="{{asset "images/twitter.svg"}}" alt="twitter" class="h-5 w-5 mr-2" />
+                    <img src="{{asset "images/twitter.svg"}}" alt="twitter" class="h-5 w-5" />
                 </a>
                 <a class="social-link" href="https://mastodon.ethibox.fr/@johackim" target="_blank" rel="noopener">
-                    <img src="{{asset "images/mastodon.svg"}}" alt="mastodon" class="h-5 w-5 mr-2" />
+                    <img src="{{asset "images/mastodon.svg"}}" alt="mastodon" class="h-5 w-5" />
                 </a>
                 <a class="social-link" href="https://t.me/johackim" target="_blank" rel="noopener">
-                    <img src="{{asset "images/telegram.svg"}}" alt="telegram" class="h-5 w-5 mr-2" />
+                    <img src="{{asset "images/telegram.svg"}}" alt="telegram" class="h-5 w-5" />
                 </a>
                 <a class="social-link" href="https://github.com/johackim" target="_blank" rel="noopener">
-                    <img src="{{asset "images/github.svg"}}" alt="github" class="h-5 w-5 mr-2" />
+                    <img src="{{asset "images/github.svg"}}" alt="github" class="h-5 w-5" />
                 </a>
                 <a class="social-link rss-button" href="/rss/" title="RSS" target="_blank" rel="noopener">
-                    <img src="{{asset "images/rss.svg"}}" alt="rss" class="h-5 w-5 mr-2" />
+                    <img src="{{asset "images/rss.svg"}}" alt="rss" class="h-5 w-5" />
                 </a>
                 {{!--  End custom  --}}
                 {{/if}}

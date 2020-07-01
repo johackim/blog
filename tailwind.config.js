@@ -1,4 +1,5 @@
 module.exports = {
+    purge: false,
     theme: {
         opacity: {
             0: '0',
@@ -15,6 +16,9 @@ module.exports = {
             90: '.9',
             100: '1',
         },
+        plugins: [
+            require('@tailwindcss/ui'),
+        ],
         /* extend: {
             colors: {
                 gray: {

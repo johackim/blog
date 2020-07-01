@@ -1,0 +1,26 @@
+{{!< default}}
+
+<section class="pt-20">
+    <div class="container m-auto px-4 lg:max-w-screen-md">
+        <nav class="mb-4">
+            <ol class="list-none p-0 inline-flex">
+                <li class="flex items-center">
+                    <a href="/">{{ t "Home" }}</a>
+                    {{> "icons/chevron" }}
+                </li>
+                <li class="flex items-center">
+                    <a href="#" class="text-gray-500">{{ t "Categories" }}</a>
+                </li>
+            </ol>
+        </nav>
+
+        {{#get "tags" limit="all" include="count.posts" order="name asc" filter="slug:-nofeed"}}
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <a href="/all/" class="h-32 bg-gray-800 flex flex-col justify-center text-center font-bold">{{ t "All posts" }}</a>
+            {{#foreach tags}}
+                <a href="{{url}}" class="h-32 bg-gray-800 flex flex-col justify-center text-center font-bold">{{name}}</a>
+            {{/foreach}}
+        </div>
+        {{/get}}
+    </div>
+</section>

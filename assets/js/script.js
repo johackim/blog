@@ -52,6 +52,14 @@ closeNotificationBtn.addEventListener('click', () => {
     window.history.pushState("", "", '/');
 });
 
+/* Titles */
+
+var titles = document.querySelectorAll('article a, main h1');
+
+[].forEach.call(titles, function(title) {
+    title.innerHTML = title.innerHTML.replace(" ?", "&nbsp;?");
+});
+
 /* Custom */
 
 fetch('https://store.zapier.com/api/records?secret=GodoRihdRuwd1~')

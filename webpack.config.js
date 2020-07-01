@@ -31,8 +31,8 @@ module.exports = {
                         options: {
                             ident: 'postcss',
                             plugins: [
-                                require('tailwindcss')("./tailwind.config.js"), // eslint-disable-line
-                                require('autoprefixer'), // eslint-disable-line
+                                require('tailwindcss')("./tailwind.config.js"),
+                                require('autoprefixer'),
                             ],
                         },
                     },

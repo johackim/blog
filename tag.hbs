@@ -1,9 +1,7 @@
 {{!< default}}
 
 <section class="pt-20">
-    <div class="container m-auto grid gap-6 px-6 sm:grid-cols-2 lg:max-w-screen-md">
-        {{#foreach posts}}
-            {{> "post-card"}}
-        {{/foreach}}
+    <div class="container m-auto px-4 lg:max-w-screen-md">
+        {{pagination}}
     </div>
 </section>
