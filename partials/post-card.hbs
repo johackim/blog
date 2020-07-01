@@ -1,7 +1,10 @@
 {{!-- Re-usable card for linking to posts --}}
 
 <article>
-    <a href="{{url}}" class="h-32 bg-gray-800 flex flex-col justify-center text-center font-bold px-4">
-        {{title}}
+    <a href="{{url}}" class="h-48 bg-gray-800 border border-gray-800 hover:border-gray-700 hover:text-white flex flex-col justify-center bg-cover bg-center relative" style="background-image: url({{img_url feature_image size="m"}})">
+        <div class="absolute inset-0 transition-opacity">
+            <div class="absolute inset-0 bg-gray-900 opacity-90"></div>
+        </div>
+        <span class="transform text-center font-bold px-4">{{title}}</span>
     </a>
 </article>

@@ -22,7 +22,12 @@
         </nav>
 
         <div class="mb-8">
-            <h1 class="h-64 bg-gray-800 flex flex-col justify-center text-center font-bold px-2 lg:px-8 text-3xl">{{title}}</h1>
+            <h1 class="h-64 bg-gray-800 border border-gray-800 flex flex-col justify-center bg-cover bg-center relative" style="background-image: url({{img_url feature_image size="m"}})">
+                <div class="absolute inset-0 transition-opacity">
+                    <div class="absolute inset-0 bg-gray-900 opacity-90"></div>
+                </div>
+                <span class="transform text-center font-bold px-4 text-3xl">{{title}}</span>
+            </h1>
         </div>
 
         <div id="content">{{content}}</div>

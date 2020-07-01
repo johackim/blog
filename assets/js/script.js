@@ -15,6 +15,11 @@ images.forEach((image) => {
 const subscribeButtons = document.querySelectorAll('.subscribe');
 const modal = document.querySelector('.modal');
 const closeModalBtn = document.querySelector('.modal .close');
+const hash = location.hash.substr(1);
+
+if (hash === 'subscribe') {
+    modal.classList.remove('invisible');
+}
 
 closeModalBtn.addEventListener('click', () => {
     modal.classList.add('invisible');

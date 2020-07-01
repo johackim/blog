@@ -4,10 +4,13 @@ routes:
     template: home
 
 collections:
-  /blog/:
-    permalink: /blog/{slug}/
+  /:
+    permalink: /{primary_tag}/{slug}/
+    template: index
+  /all/:
+    permalink: /{primary_tag}/{slug}/
     template: index
 
 taxonomies:
-  tag: /tag/{slug}/
+  tag: /{slug}/
   author: /author/{slug}/

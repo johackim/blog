@@ -105,6 +105,10 @@ header a.active, header a:hover {
     @apply text-white underline;
 }
 
+#content img {
+    @apply opacity-50 m-auto;
+}
+
 #content .kg-width-wide,
 #content .kg-width-full,
 #content .kg-gallery-container {}
@@ -185,7 +189,7 @@ header a.active, header a:hover {
     @apply border-l-4 border-gray-700 pl-4 my-6 text-lg;
 }
 
-em {
+#content em {
     @apply italic;
 }
 
