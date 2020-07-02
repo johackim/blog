@@ -167,7 +167,7 @@ a.active, a:hover {
 }
 
 #content pre {
-    @apply bg-black px-4 py-2 my-4 text-sm;
+    @apply bg-black px-4 py-2 my-4 text-sm break-words;
 }
 
 #content pre code {
