@@ -2,6 +2,8 @@ import '../css/screen.css';
 
 const images = document.querySelectorAll('.kg-gallery-image img');
 
+const currentPath = window.location.href.replace('#subscribe', '');
+
 images.forEach((image) => {
     const container = image.closest('.kg-gallery-image');
     const width = image.attributes.width.value;
@@ -23,7 +25,7 @@ if (hash === 'subscribe') {
 
 closeModalBtn.addEventListener('click', () => {
     modal.classList.add('invisible');
-    window.history.pushState("", "", '/');
+    window.history.pushState("", "", currentPath);
 });
 
 [].forEach.call(subscribeButtons, (button) => {
@@ -54,7 +56,7 @@ if (action === 'subscribe') {
 
 closeNotificationBtn.addEventListener('click', () => {
     notification.classList.add('hidden');
-    window.history.pushState("", "", '/');
+    window.history.pushState("", "", currentPath);
 });
 
 /* Titles */

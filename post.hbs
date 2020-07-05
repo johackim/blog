@@ -1,30 +1,21 @@
 {{!< default}}
 
-<div class="bg-gray-600 h-1 z-10 fixed inset-0" id="progress-bar"></div>
+<div class="bg-gray-600 h-1 z-10 fixed inset-0 invisible" id="progress-bar"></div>
 
 {{#post}}
 <section class="pt-20">
 	<div class="container m-auto px-4 lg:max-w-screen-md">
         <nav class="mb-4 overflow-x-scroll whitespace-no-wrap lg:truncate lg:overflow-x-hidden">
-            <ol class="list-none p-0 inline-flex">
-                <li class="flex items-center">
-                    <a href="/">{{ t "Home" }}</a>
-                    {{> "icons/chevron" }}
-                </li>
-                <li class="flex items-center">
-                    <a href="/categories/">{{ t "Categories" }}</a>
-                    {{> "icons/chevron" }}
-                </li>
-                <li class="flex items-center">
-                    {{#primary_tag}}
-                        <a href="{{url}}" aria-current="page">{{name}}</a>
-                    {{/primary_tag}}
-                    {{> "icons/chevron" }}
-                </li>
-                <li>
-                  <span class="text-gray-500">{{title}}</span>
-              </li>
-            </ol>
+            <span class="inline-flex items-center">
+                <a href="/">{{ t "Home" }}</a>
+                {{> "icons/chevron" }}
+            </span><span class="inline-flex items-center">
+                <a href="/categories/">{{ t "Categories" }}</a>
+                {{> "icons/chevron" }}
+            </span><span class="inline-flex items-center">
+                {{#primary_tag}}<a href="{{url}}" aria-current="page">{{name}}</a>{{/primary_tag}}
+                {{> "icons/chevron" }}
+            </span><span class="text-gray-500">{{title}}</span>
         </nav>
 
         <div class="mb-8 relative border border-gray-800">
@@ -49,6 +40,7 @@
         const windowBottom = winTop + window.outerHeight;
         const progress = 100 - (((targetBottom - windowBottom + window.outerHeight / 3) / (targetBottom - window.outerHeight + window.outerHeight / 3)) * 100);
         document.querySelector('#progress-bar').style.width = progress + '%';
+        document.querySelector('#progress-bar').classList.remove('invisible');
     };
 
     document.addEventListener('DOMContentLoaded', () => {
