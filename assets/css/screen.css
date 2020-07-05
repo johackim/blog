@@ -41,9 +41,6 @@
 body {
     font-family: 'Roboto';
     @apply bg-gray-900 text-gray-300;
-}
-
-body {
     @apply h-screen flex flex-col justify-between;
 }
 
@@ -211,4 +208,41 @@ form[data-members-form=subscribe].error .message-error {
 
 form[data-members-form=subscribe].success .message-success {
     @apply block;
+}
+
+/* Commento */
+
+#commento * {
+    @apply text-gray-300 !important;
+}
+
+#commento .commento-option-button:hover,
+#commento .commento-upvoted,
+#commento .commento-downvoted {
+    @apply bg-white;
+}
+
+#commento .commento-submit-button {
+    @apply bg-transparent border border-gray-300 lowercase capitalize;
+}
+
+#commento .commento-submit-button:hover {
+    @apply text-white border-white !important;
+}
+
+#commento textarea {
+    @apply bg-gray-800;
+}
+
+.commento-root .commento-card .commento-moderator::after {
+    @apply bg-transparent border border-gray-400 !important;
+    padding: 1px 5px !important;
+}
+
+#commento .commento-avatar {
+    @apply bg-gray-800 !important;
+}
+
+#commento .commento-card {
+    @apply border-l-2 border-gray-800 !important;
 }

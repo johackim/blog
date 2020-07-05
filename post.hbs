@@ -1,9 +1,11 @@
 {{!< default}}
 
+<div class="bg-gray-600 h-1 z-10 fixed inset-0" id="progress-bar"></div>
+
 {{#post}}
 <section class="pt-20">
 	<div class="container m-auto px-4 lg:max-w-screen-md">
-        <nav class="mb-4 whitespace-no-wrap overflow-x-auto overflow-y-hidden">
+        <nav class="mb-4 overflow-x-scroll whitespace-no-wrap lg:truncate lg:overflow-x-hidden">
             <ol class="list-none p-0 inline-flex">
                 <li class="flex items-center">
                     <a href="/">{{ t "Home" }}</a>
@@ -17,20 +19,43 @@
                     {{#primary_tag}}
                         <a href="{{url}}" aria-current="page">{{name}}</a>
                     {{/primary_tag}}
+                    {{> "icons/chevron" }}
                 </li>
+                <li>
+                  <span class="text-gray-500">{{title}}</span>
+              </li>
             </ol>
         </nav>
 
-        <div class="mb-8">
-            <h1 class="h-64 border border-gray-800 flex flex-col justify-center bg-cover bg-center relative" style="background-image: url({{img_url feature_image size="m"}})">
-                <div class="absolute inset-0 transition-opacity">
-                    <div class="absolute inset-0 bg-gray-900 opacity-80"></div>
-                </div>
+        <div class="mb-8 relative border border-gray-800">
+            <h1 class="h-64 flex flex-col justify-center bg-cover bg-center" style="background-image: url({{img_url feature_image size="m"}})">
+                <span class="absolute inset-0 bg-gray-900 opacity-80"></span>
                 <span class="transform text-center font-bold px-4 text-3xl">{{title}}</span>
             </h1>
         </div>
 
         <div id="content">{{content}}</div>
+
+        <div id="commento"></div>
+        <script defer src="http://commento.johackim.com/js/commento.js"></script>
 	</div>
 </section>
 {{/post}}
+
+<script>
+    const readingProgress = target => {
+        const winTop = window.pageYOffset || document.documentElement.scrollTop;
+        const targetBottom = target.offsetTop + target.scrollHeight;
+        const windowBottom = winTop + window.outerHeight;
+        const progress = 100 - (((targetBottom - windowBottom + window.outerHeight / 3) / (targetBottom - window.outerHeight + window.outerHeight / 3)) * 100);
+        document.querySelector('#progress-bar').style.width = progress + '%';
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const content = document.querySelector('#content');
+        readingProgress(content);
+        window.addEventListener('scroll', () => {
+            readingProgress(content);
+        });
+    });
+</script>
