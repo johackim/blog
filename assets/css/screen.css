@@ -216,6 +216,37 @@ form[data-members-form=subscribe].success .message-success {
     @apply text-gray-300 !important;
 }
 
+#commento #commento-login-box {
+    @apply bg-gray-800;
+}
+
+#commento .commento-login-box-container {
+    @apply z-10;
+}
+
+#commento #commento-login-box .commento-input,
+#commento .commento-email {
+    @apply bg-gray-900 !important;
+}
+
+#commento .commento-email-button {
+    @apply bg-gray-900 border-gray-700 !important;
+}
+
+#commento .commento-login-box-close {
+    @apply opacity-100;
+}
+
+#commento .commento-login-box-close::after,
+#commento .commento-login-box-close::before {
+    @apply bg-gray-300;
+}
+
+#commento .commento-login-box-close:hover::after,
+#commento .commento-login-box-close:hover::before {
+    @apply bg-white;
+}
+
 #commento .commento-option-button:hover,
 #commento .commento-upvoted,
 #commento .commento-downvoted {
