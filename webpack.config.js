@@ -31,8 +31,12 @@ module.exports = {
                         options: {
                             ident: 'postcss',
                             plugins: [
-                                require('tailwindcss')("./tailwind.config.js"),
-                                require('autoprefixer'),
+                                require('tailwindcss')('./tailwind.config.js'), // eslint-disable-line
+                                require('autoprefixer'), // eslint-disable-line
+                                require('@fullhuman/postcss-purgecss')({ // eslint-disable-line
+                                    content: ['**/*.hbs'],
+                                    defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+                                }),
                             ],
                         },
                     },

@@ -23,6 +23,7 @@
     "devDependencies": {
         "@babel/core": "^7.9.0",
         "@babel/preset-env": "^7.9.0",
+        "@fullhuman/postcss-purgecss": "^2.3.0",
         "@tailwindcss/ui": "^0.3.0",
         "babel-eslint": "^10.1.0",
         "babel-loader": "^8.1.0",

@@ -38,11 +38,17 @@
 
 /* Body */
 
+/* purgecss start ignore */
 body {
     font-family: 'Roboto';
     @apply bg-gray-900 text-gray-300;
     @apply h-screen flex flex-col justify-between;
 }
+
+body.home-template main {
+    @apply flex-grow flex flex-col justify-center;
+}
+/* purgecss end ignore */
 
 body.home-template header {
     @apply static;
@@ -212,6 +218,8 @@ form[data-members-form=subscribe].success .message-success {
 
 /* Commento */
 
+/* purgecss start ignore */
+
 #commento * {
     @apply text-gray-300 !important;
 }
@@ -281,3 +289,5 @@ form[data-members-form=subscribe].success .message-success {
 #commento .commento-mod-tools::before {
     @apply text-gray-700 !important;
 }
+
+/* purgecss end ignore */
