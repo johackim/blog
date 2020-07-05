@@ -277,3 +277,7 @@ form[data-members-form=subscribe].success .message-success {
 #commento .commento-card {
     @apply border-l-2 border-gray-800 !important;
 }
+
+#commento .commento-mod-tools::before {
+    @apply text-gray-700 !important;
+}

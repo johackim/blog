@@ -38,6 +38,7 @@ document.onkeydown = (evt) => {
     evt = evt || window.event;
     if (evt.keyCode === 27) {
         modal.classList.add('invisible');
+        window.history.pushState("", "", currentPath);
     }
 };
 
