@@ -17,7 +17,7 @@ images.forEach((image) => {
 const subscribeButtons = document.querySelectorAll('.subscribe');
 const modal = document.querySelector('.modal');
 const closeModalBtn = document.querySelector('.modal .close');
-const hash = location.hash.substr(1);
+const hash = window.location.hash.substr(1);
 
 if (hash === 'subscribe') {
     modal.classList.remove('invisible');
@@ -25,7 +25,7 @@ if (hash === 'subscribe') {
 
 closeModalBtn.addEventListener('click', () => {
     modal.classList.add('invisible');
-    window.history.pushState("", "", currentPath);
+    window.history.pushState('', '', currentPath);
 });
 
 [].forEach.call(subscribeButtons, (button) => {
@@ -38,7 +38,7 @@ document.onkeydown = (evt) => {
     evt = evt || window.event;
     if (evt.keyCode === 27) {
         modal.classList.add('invisible');
-        window.history.pushState("", "", currentPath);
+        window.history.pushState('', '', currentPath);
     }
 };
 
@@ -49,7 +49,7 @@ const closeNotificationBtn = document.querySelector('.notification .close');
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const action = urlParams.get('action')
+const action = urlParams.get('action');
 
 if (action === 'subscribe') {
     notification.classList.remove('hidden');
@@ -57,15 +57,15 @@ if (action === 'subscribe') {
 
 closeNotificationBtn.addEventListener('click', () => {
     notification.classList.add('hidden');
-    window.history.pushState("", "", currentPath);
+    window.history.pushState('', '', currentPath);
 });
 
 /* Titles */
 
-var titles = document.querySelectorAll('article a, main h1');
+const titles = document.querySelectorAll('article a, main h1');
 
-[].forEach.call(titles, function(title) {
-    title.innerHTML = title.innerHTML.replace(" ?", "&nbsp;?");
+[].forEach.call(titles, (title) => {
+    title.innerHTML = title.innerHTML.replace(' ?', '&nbsp;?');
 });
 
 /* Custom */
