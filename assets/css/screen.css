@@ -178,6 +178,10 @@ a.active, a:hover {
     padding: 2px 6px;
 }
 
+#content figcaption {
+    @apply text-center italic;
+}
+
 /* Blockquote */
 
 #content blockquote {
