@@ -1,4 +1,4 @@
-Ghost + Tailwind CSS Boilerplate
+My blog theme
 ===
 
 [![License](https://img.shields.io/badge/license-GPL%20v3%2B-yellow.svg?style=flat-square&colorA=0d7377&colorB=44c2c7)](https://raw.githubusercontent.com/johackim/boilerplate/master/LICENSE.txt)
