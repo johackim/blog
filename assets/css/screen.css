@@ -2,6 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* purgecss start ignore */
+
 ::selection {
     @apply bg-gray-800 text-gray-400;
 }
@@ -44,14 +46,12 @@ body {
     @apply h-screen flex flex-col justify-between;
 }
 
-/* purgecss ignore */
 body.home-template header {
     @apply static;
 }
 
 /* Sticky footer */
 
-/* purgecss ignore */
 body:not(.home-template) main {
     flex: 1;
 }
@@ -214,7 +214,6 @@ form[data-members-form=subscribe].success .message-success {
 
 /* Commento */
 
-/* purgecss start ignore */
 #commento * {
     @apply text-gray-300 !important;
 }
@@ -284,4 +283,5 @@ form[data-members-form=subscribe].success .message-success {
 #commento .commento-mod-tools::before {
     @apply text-gray-700 !important;
 }
+
 /* purgecss end ignore */
