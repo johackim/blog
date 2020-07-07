@@ -166,12 +166,16 @@ a.active, a:hover {
     border-radius: 0 3px 3px 0;
 }
 
+#content .kg-embed-card iframe {
+    @apply w-full;
+}
+
 #content .kg-image-card {
     @apply my-4;
 }
 
 #content .kg-image-card img {
-    @apply opacity-90 mx-auto;
+    @apply opacity-90 mx-auto bg-gray-800;
 }
 
 #content pre {
@@ -188,7 +192,23 @@ a.active, a:hover {
 }
 
 #content figcaption {
-    @apply text-center italic;
+    @apply text-center italic mt-2;
+}
+
+#content hr {
+    @apply border-gray-800;
+}
+
+#content table {
+    @apply table-auto;
+}
+
+#content table tr th {
+    @apply px-4 py-2;
+}
+
+#content table tr td {
+    @apply border border-gray-800 px-4 py-2;
 }
 
 /* Blockquote */
