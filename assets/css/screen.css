@@ -296,8 +296,17 @@ form[data-members-form=subscribe].success .message-success {
     @apply text-white border-white !important;
 }
 
-#commento #commento-submit-button-root {
+#commento #commento-submit-button-root,
+#commento .commento-login-text {
     @apply mr-0;
+}
+
+#commento #commento-markdown-button-root {
+    @apply ml-0;
+}
+
+#commento #commento-markdown-help-root {
+    @apply w-full border-gray-800;
 }
 
 #commento textarea {
