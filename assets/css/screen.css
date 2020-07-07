@@ -296,6 +296,10 @@ form[data-members-form=subscribe].success .message-success {
     @apply text-white border-white !important;
 }
 
+#commento #commento-submit-button-root {
+    @apply mr-0;
+}
+
 #commento textarea {
     @apply bg-gray-800;
 }
