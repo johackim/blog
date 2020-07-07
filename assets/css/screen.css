@@ -65,7 +65,7 @@ a.active, a:hover {
 /* Content */
 
 #content h1, h2, h3, h4, h5, h6 {
-    @apply mb-4;
+    @apply my-4;
 }
 
 #content h1 {
@@ -81,12 +81,12 @@ a.active, a:hover {
 }
 
 #content p {
-    @apply mb-8 leading-relaxed;
+    @apply my-8 leading-relaxed;
 }
 
 #content ol,
 #content ul {
-    @apply list-inside ml-6 mb-4;
+    @apply list-inside ml-6 my-8;
 }
 
 #content ul {
@@ -194,7 +194,7 @@ a.active, a:hover {
 /* Blockquote */
 
 #content blockquote {
-    @apply border-l-4 border-gray-700 pl-4 my-6 text-lg;
+    @apply border-l-4 border-gray-700 pl-4 my-6 text-lg mx-0;
 }
 
 #content em {
