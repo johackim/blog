@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "./prism.css";
 
 /* purgecss start ignore */
 
@@ -333,6 +334,12 @@ form[data-members-form=subscribe].success .message-success {
 
 #commento .commento-mod-tools::before {
     @apply text-gray-700 !important;
+}
+
+/* Prism */
+
+.toolbar-item a {
+    @apply no-underline !important;
 }
 
 /* purgecss end ignore */

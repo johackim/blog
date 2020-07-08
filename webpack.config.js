@@ -4,9 +4,12 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: './assets/js/script.js',
+    entry: {
+        script: './assets/js/script.js',
+        prism: './assets/js/prism.js',
+    },
     output: {
-        filename: 'script.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'assets/built/'),
     },
     module: {
