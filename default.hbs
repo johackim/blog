@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </a>
-            <div class="grid grid-flow-col gap-4">
+            <div class="grid grid-flow-col gap-4 items-center">
                 {{navigation}}
                 {{#if @labs.members}}
                     <a href="#subscribe" class="border rounded-md px-3 py-1 hover:border-white subscribe">{{ t "Subscribe" }}</a>
@@ -45,7 +45,7 @@
     <footer>
         <div class="container m-auto px-4 py-8 flex items-center justify-between flex-wrap lg:max-w-screen-md">
             <div><span class="inline-block transform rotate-180 align-middle">&copy;</span> 2017-{{date format="YYYY"}}</div>
-            <nav class="grid grid-cols-5 gap-2">
+            <nav class="grid grid-flow-col gap-2 items-center">
                 {{navigation type="secondary"}}
                 <a href="https://twitter.com/_johackim" target="_blank">
                     {{> "icons/twitter" }}

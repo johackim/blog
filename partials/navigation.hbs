@@ -1,6 +1,6 @@
 {{#if isSecondary}}
     {{#foreach navigation }}
-    <a href="{{url absolute="true"}}" class="mr-6{{#if current}} active{{/if}}">{{label}}</a>
+    <a href="{{url absolute="true"}}" class="{{#if current}} active{{/if}}">{{label}}</a>
     {{/foreach}}
 {{else}}
     {{#foreach navigation}}
