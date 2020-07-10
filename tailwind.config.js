@@ -17,7 +17,7 @@ module.exports = {
             100: '1',
         },
         plugins: [
-            require('@tailwindcss/ui'),
+            require('@tailwindcss/ui'), // eslint-disable-line
         ],
         /* extend: {
             colors: {
