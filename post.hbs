@@ -18,11 +18,25 @@
             </span><span class="text-gray-500">{{title}}</span>
         </nav>
 
-        <div class="mb-8 relative border border-gray-800">
+        <div class="mb-4 relative border border-gray-800">
             <h1 class="h-64 flex flex-col justify-center bg-cover bg-center" style="background-image: url({{img_url feature_image size="m"}})">
                 <span class="absolute inset-0 bg-gray-900 opacity-80"></span>
                 <span class="transform text-center font-bold px-4 text-3xl">{{title}}</span>
             </h1>
+        </div>
+
+        <div class="flex justify-between text-sm text-gray-500 mb-8">
+            <div>
+                {{#foreach authors}}
+                    <img src="{{img_url profile_image size="xs"}}" alt="{{name}}" class="w-6 h-6 rounded-full inline mr-1" />
+                    <span>{{name}}</span>
+                {{/foreach}}
+                • <time class="time" datetime="{{date format="YYYY-MM-DD HH:MM:SS"}}" itemprop="datePublished">{{date format="DD MMMM YYYY"}}</time>
+            </div>
+
+            <div>
+                {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+            </div>
         </div>
 
         <div id="content">{{content}}</div>
