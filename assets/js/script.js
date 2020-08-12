@@ -76,3 +76,15 @@ fetch('https://store.zapier.com/api/records?secret=GodoRihdRuwd1~')
     })));
 
 /* End custom */
+
+/* Carousel */
+
+$(document).ready(() => {
+    $('.slider').slick({
+        dots: true,
+        arrows: false,
+        adaptiveHeight: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+    });
+});

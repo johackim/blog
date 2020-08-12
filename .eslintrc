@@ -27,6 +27,7 @@
         "browser"
     },
     "env": {
-        "browser": true
+        "browser": true,
+        "jquery": true
     }
 }
