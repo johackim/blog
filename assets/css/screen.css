@@ -86,6 +86,10 @@ a.active, a:hover {
     @apply text-xl font-bold;
 }
 
+#content p:first-child {
+    @apply text-lg;
+}
+
 #content p {
     @apply my-8 leading-relaxed;
 }
