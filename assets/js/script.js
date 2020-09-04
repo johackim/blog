@@ -16,31 +16,34 @@ images.forEach((image) => {
 
 const subscribeButtons = document.querySelectorAll('.subscribe');
 const modal = document.querySelector('.modal');
-const closeModalBtn = document.querySelector('.modal .close');
-const hash = window.location.hash.substr(1);
 
-if (hash === 'subscribe') {
-    modal.classList.remove('invisible');
-}
+if (modal) {
+    const closeModalBtn = document.querySelector('.modal .close');
+    const hash = window.location.hash.substr(1);
 
-closeModalBtn.addEventListener('click', () => {
-    modal.classList.add('invisible');
-    window.history.pushState('', '', currentPath);
-});
-
-[].forEach.call(subscribeButtons, (button) => {
-    button.addEventListener('click', () => {
+    if (hash === 'subscribe') {
         modal.classList.remove('invisible');
-    });
-});
+    }
 
-document.onkeydown = (evt) => {
-    evt = evt || window.event;
-    if (evt.keyCode === 27) {
+    closeModalBtn.addEventListener('click', () => {
         modal.classList.add('invisible');
         window.history.pushState('', '', currentPath);
-    }
-};
+    });
+
+    [].forEach.call(subscribeButtons, (button) => {
+        button.addEventListener('click', () => {
+            modal.classList.remove('invisible');
+        });
+    });
+
+    document.onkeydown = (evt) => {
+        evt = evt || window.event;
+        if (evt.keyCode === 27) {
+            modal.classList.add('invisible');
+            window.history.pushState('', '', currentPath);
+        }
+    };
+}
 
 /* Notification */
 
@@ -55,10 +58,29 @@ if (action === 'subscribe') {
     notification.classList.remove('hidden');
 }
 
+if (action === 'signin') {
+    notification.classList.remove('hidden');
+
+    if (urlParams.get('success') === 'true') {
+        document.querySelector('.notification-signin-success').classList.remove('hidden');
+    } else {
+        document.querySelector('.notification-signin-failed').classList.remove('hidden');
+    }
+}
+
 closeNotificationBtn.addEventListener('click', () => {
     notification.classList.add('hidden');
     window.history.pushState('', '', currentPath);
 });
+
+/* Stripe */
+
+const stripe = urlParams.get('stripe');
+
+if (stripe === 'success') {
+    document.querySelector('.notification-checkout-success').classList.remove('hidden');
+    notification.classList.remove('hidden');
+}
 
 /* Titles */
 
@@ -67,6 +89,23 @@ const titles = document.querySelectorAll('article a, main h1');
 [].forEach.call(titles, (title) => {
     title.innerHTML = title.innerHTML.replace(' ?', '&nbsp;?');
 });
+
+/* Menu */
+
+const menu = document.querySelector('.menu');
+const menuBtn = document.querySelector('#options-menu');
+
+if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+
+    window.addEventListener('click', (e) => {
+        if (!document.querySelector('#options-menu').contains(e.target)) {
+            menu.classList.add('hidden');
+        }
+    });
+}
 
 /* Custom */
 

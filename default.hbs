@@ -20,7 +20,6 @@
 </head>
 <body class="{{body_class}}">
     {{> "notification"}}
-    {{> "modal"}}
 
     <header class="flex shadow-lg fixed top-0 inset-x-0 h-16 items-center z-10 bg-gray-900">
         <div class="container m-auto flex items-center justify-between flex-wrap px-4 lg:max-w-screen-md">
@@ -35,9 +34,36 @@
             </a>
             <div class="grid grid-flow-col gap-4 items-center">
                 {{navigation}}
-                {{#if @labs.members}}
-                    <a href="#subscribe" class="border rounded-md px-3 py-1 hover:border-white subscribe">{{ t "Subscribe" }}</a>
+                {{#if @member}}
+                    <div class="relative inline-block text-left">
+                        <div>
+                            <span class="rounded-md shadow-sm">
+                                <button type="button" class="border rounded-md px-3 py-1 hover:border-white focus:hover-white focus:outline-none inline-flex justify-center w-full items-center" id="options-menu" aria-haspopup="true" aria-expanded="true">
+                                    {{ t "My account" }}
+                                    <svg class="-mr-1 ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </span>
+                        </div>
+
+                        <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg menu hidden">
+                            <div class="rounded-md bg-gray-900 shadow-xs border" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                                <div class="px-4 py-3">
+                                    <p class="text-sm leading-5">{{ t "Signed in as" }}</p>
+                                    <p class="text-sm leading-5 font-medium truncate">{{@member.email}}</p>
+                                </div>
+                                <div class="border-t border-gray-300"></div>
+                                <a href="{{@site.url}}/account/" class="block px-4 py-2 text-sm leading-5 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">{{ t "Account" }}</a>
+                                <a href="/" data-members-signout class="block px-4 py-2 text-sm leading-5 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 rounded-b-md" role="menuitem">{{ t "Log out" }}</a>
+                            </div>
+                        </div>
+                    </div>
+                {{else}}
+                    {{!--  <a href="/signin">{{ t "Login" }}</a>  --}}
+                    <a href="/signup" class="border rounded-md px-3 py-1 hover:border-white">{{ t "Subscribe" }}</a>
                 {{/if}}
+
             </div>
         </div>
     </header>
@@ -60,6 +86,9 @@
                 </a>
                 <a href="https://github.com/johackim" target="_blank" rel="noopener">
                     {{> "icons/github" }}
+                </a>
+                <a href="mailto:contact@johackim.com" target="_blank" rel="noopener">
+                    {{> "icons/envelope" }}
                 </a>
                 <a href="/rss/" target="_blank" rel="noopener">
                     {{> "icons/rss" }}

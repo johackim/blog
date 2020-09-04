@@ -1,0 +1,80 @@
+{{!< ../default}}
+
+{{#if @member.paid}}
+
+    <section class="py-10 px-4 lg:px-0 mt-10">
+        <div class="container m-auto lg:px-4 lg:max-w-screen-md">
+            {{#foreach @member.subscriptions}}
+                <div class="mb-4">
+                    {{#if @first}}
+                        <p class="text-3xl leading-9 font-extrabold text-white sm:text-4xl sm:leading-10 lg:leading-none mb-4">{{ t "Your account" }}</p>
+                    {{/if}}
+                </div>
+                
+                <div class="border shadow overflow-hidden sm:rounded-lg">
+                    <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+                        <h3 class="text-lg leading-6 font-medium">
+                            {{ t "Account informations" }}
+                        </h3>
+                        <p class="mt-1 max-w-2xl text-sm leading-5">
+                            {{#if cancel_at_period_end}}
+                                <strong class="subscription-expiration-warning">
+                                    {{ t "Your subscription will expire on" }} {{date current_period_end format="DD MMM YYYY"}}.
+                                </strong>
+                                {{ t "If you change your mind in the meantime you can turn auto-renew back on to continue your subscription" }}.
+                            {{else}}
+                                {{ t "You have an active account with a full access" }}.
+                            {{/if}}
+                        </p>
+                    </div>
+                    <div class="px-4 py-5 sm:px-6">
+                        <dl class="grid grid-cols-1 col-gap-4 row-gap-8 sm:grid-cols-2">
+                            <div class="sm:col-span-1">
+                                <dt class="text-sm leading-5 font-medium">{{ t "Email address" }}</dt>
+                                <dd class="mt-1 text-sm leading-5">{{@member.email}}</dd>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <dt class="text-sm leading-5 font-medium">{{ t "Your plan" }}</dt>
+                                <dd class="mt-1 text-sm leading-5">{{price plan.amount}}{{plan.currency_symbol}} / {{ t plan.interval }}</dd>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <dt class="text-sm leading-5 font-medium">{{ t "Card" }}</dt>
+                                <dd class="mt-1 text-sm leading-5">**** **** **** {{default_payment_card_last4}}</dd>
+                            </div>
+                            <div class="sm:col-span-1">
+                                <dt class="text-sm leading-5 font-medium">
+                                    {{#if cancel_at_period_end}}
+                                        {{ t "Expires" }}
+                                    {{else}}
+                                        {{ t "Next bill date" }}
+                                    {{/if}}
+                                </dt>
+                                <dd class="mt-1 text-sm leading-5">{{date current_period_end format="DD MMM YYYY"}}</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-2 text-center mt-4">
+                    <a
+                        href="#"
+                        data-members-edit-billing
+                        data-members-success="{{@site.url}}/account/?stripe=billing-update-success"
+                        data-members-cancel="{{@site.url}}/account/?stripe=billing-update-cancel"
+                        class="border px-3 py-1 rounded-md align-middle hover:border-white"
+                        >
+                        {{ t "Edit billing info" }}
+                    </a>
+                    {{cancel_link cancelLabel=(t "Cancel subscription") continueLabel=(t "Continue subscription") class="border px-3 pt-1 pb-1 rounded-md hover:border-white" }}
+                </div>
+
+
+            {{/foreach}}
+        </div>
+    </section>
+
+{{else}}
+
+    <script>window.location = '{{@site.url}}/signin/';</script>
+
+{{/if}}

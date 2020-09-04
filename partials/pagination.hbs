@@ -14,18 +14,18 @@
             {{#if prev}}
                 {{#tag}}<a href="{{url}}" aria-current="page">{{name}}</a>{{/tag}}
             {{else}}
-                <span class="text-gray-500" aria-current="page">{{#tag}}{{name}}{{/tag}}</span>
+                <span class="text-gray-400" aria-current="page">{{#tag}}{{name}}{{/tag}}</span>
             {{/if}}
             <span class="hidden{{prev}}">{{> "icons/chevron" }}</span>
         </li>
         <li class="hidden{{prev}}">
-            <span class="text-gray-500" aria-current="page">Page {{page}}</span>
+            <span class="text-gray-400" aria-current="page">Page {{page}}</span>
         </li>
     </ol>
 </nav>
 
 <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-    {{#foreach posts}}
+    {{#foreach posts visibility="all"}}
         {{> "post-card"}}
     {{/foreach}}
 </div>
@@ -63,18 +63,18 @@
             {{#if pages.prev}}
                 <a href="/all" aria-current="page">{{t "All posts"}}</a>
             {{else}}
-                <span class="text-gray-500" aria-current="page">{{t "All posts"}}</span>
+                <span class="text-gray-400" aria-current="page">{{t "All posts"}}</span>
             {{/if}}
             <span class="hidden{{pages.prev}}">{{> "icons/chevron" }}</span>
         </li>
         <li class="hidden{{pages.prev}}">
-            <span class="text-gray-500" aria-current="page">Page {{pages.page}}</span>
+            <span class="text-gray-400" aria-current="page">Page {{pages.page}}</span>
         </li>
     </ol>
 </nav>
 
 <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-    {{#foreach posts}}
+    {{#foreach posts visibility="all"}}
         {{> "post-card"}}
     {{/foreach}}
 </div>

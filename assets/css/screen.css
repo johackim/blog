@@ -233,25 +233,25 @@ a.active, a:hover {
 
 /* Subscribe */
 
-form[data-members-form=subscribe] .button-loader,
-form[data-members-form=subscribe] .message-success,
-form[data-members-form=subscribe] .message-error {
+form[data-members-form] .button-loader,
+form[data-members-form] .message-success,
+form[data-members-form] .message-error {
     @apply hidden;
 }
 
-form[data-members-form=subscribe].loading .button-content {
+form[data-members-form].loading .button-content {
     @apply hidden;
 }
 
-form[data-members-form=subscribe].loading .button-loader {
+form[data-members-form].loading .button-loader {
     @apply block;
 }
 
-form[data-members-form=subscribe].error .message-error {
+form[data-members-form].error .message-error {
     @apply block;
 }
 
-form[data-members-form=subscribe].success .message-success {
+form[data-members-form].success .message-success {
     @apply block;
 }
 
