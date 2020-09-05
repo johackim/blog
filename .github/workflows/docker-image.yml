@@ -1,0 +1,16 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy on docker swarm
+        run: |
+          curl -X POST https://portainer.ethibox.fr/api/webhooks/36c3cd6b-2deb-459f-8ffd-49e27c5a61d2
