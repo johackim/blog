@@ -20,6 +20,7 @@
 </head>
 <body class="{{body_class}}">
     {{> "notification"}}
+    {{> "modal"}}
 
     <header class="flex shadow-lg fixed top-0 inset-x-0 h-16 items-center z-10 bg-gray-900">
         <div class="container m-auto flex items-center justify-between flex-wrap px-4 lg:max-w-screen-md">
@@ -61,7 +62,7 @@
                     </div>
                 {{else}}
                     {{!--  <a href="/signin">{{ t "Login" }}</a>  --}}
-                    <a href="/signup" class="border rounded-md px-3 py-1 hover:border-white">{{ t "Subscribe" }}</a>
+                    <a href="#subscribe" class="border rounded-md px-3 py-1 hover:border-white subscribe">{{ t "Subscribe" }}</a>
                 {{/if}}
 
             </div>
