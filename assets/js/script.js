@@ -56,6 +56,12 @@ const action = urlParams.get('action');
 
 if (action === 'subscribe') {
     notification.classList.remove('hidden');
+
+    if (urlParams.get('success') === 'true') {
+        document.querySelector('.notification-subscribe-success').classList.remove('hidden');
+    } else {
+        document.querySelector('.notification-subscribe-failed').classList.remove('hidden');
+    }
 }
 
 if (action === 'signin') {
