@@ -74,6 +74,16 @@ if (action === 'signin') {
     }
 }
 
+if (action === 'signup') {
+    notification.classList.remove('hidden');
+
+    if (urlParams.get('success') === 'true') {
+        document.querySelector('.notification-signup-success').classList.remove('hidden');
+    } else {
+        document.querySelector('.notification-signup-failed').classList.remove('hidden');
+    }
+}
+
 closeNotificationBtn.addEventListener('click', () => {
     notification.classList.add('hidden');
     window.history.pushState('', '', currentPath);

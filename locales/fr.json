@@ -57,5 +57,7 @@
     "Cancel subscription": "Annuler l'abonnement",
     "Continue subscription": "Continuer l'abonnement",
     "This post is for subscribers only": "Cet article est réservé aux abonnés",
-    "You need to become a member in order to read this post...": "Vous devez devenir membre pour pouvoir lire cet article... "
+    "You need to become a paid member in order to read this post...": "Vous devez devenir membre payant pour pouvoir lire cet article... ",
+    "Currently, you're not a subscriber": "Actuellement, vous n'êtes pas abonné",
+    "You are subscribed to newsletter from {site}, but doesn't have a paid subscription to unlock full access": "Vous êtes abonné à la newsletter de {site}, mais vous ne disposez pas d'un abonnement payant pour débloquer l'accès complet"
 }
