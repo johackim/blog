@@ -185,7 +185,7 @@ a.active, a:hover {
 }
 
 #content .kg-image-card img {
-    @apply opacity-90 mx-auto bg-gray-800;
+    @apply opacity-90 mx-auto;
 }
 
 #content pre {
