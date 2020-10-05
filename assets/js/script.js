@@ -1,4 +1,5 @@
 import '../css/screen.css';
+import Glider from 'glider-js';
 
 const images = document.querySelectorAll('.kg-gallery-image img');
 
@@ -134,12 +135,32 @@ fetch('https://store.zapier.com/api/records?secret=GodoRihdRuwd1~')
 
 /* Carousel */
 
-$(document).ready(() => {
-    $('.slider').slick({
-        dots: true,
-        arrows: false,
-        adaptiveHeight: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-    });
+const glider = new Glider(document.querySelector('.glider'), {
+    slidesToShow: 1,
+    slidesToScroll: 'auto',
+    dots: '.dots',
 });
+
+function sliderAuto(slider, miliseconds) {
+    const slidesCount = slider.track.childElementCount;
+    let slideTimeout = null;
+    let nextIndex = 1;
+
+    const slide = () => {
+        slideTimeout = setTimeout(() => {
+            if (nextIndex >= slidesCount) {
+                nextIndex = 0;
+            }
+            slider.scrollItem(nextIndex++); // eslint-disable-line
+        }, miliseconds);
+    };
+
+    slider.ele.addEventListener('glider-animated', () => {
+        window.clearInterval(slideTimeout);
+        slide();
+    });
+
+    slide();
+}
+
+sliderAuto(glider, 5000);

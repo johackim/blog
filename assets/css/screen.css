@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import 'glider-js/glider.min.css';
 @import "./prism.css";
 
 /* purgecss start ignore */
@@ -344,6 +345,18 @@ form[data-members-form].success .message-success {
 
 .toolbar-item a {
     @apply no-underline !important;
+}
+
+/* Carousel */
+
+.glider-dot {
+    width: 6px;
+    height: 6px;
+    @apply bg-gray-800;
+}
+
+.glider-dot.active {
+    @apply bg-gray-500;
 }
 
 /* purgecss end ignore */
