@@ -135,32 +135,36 @@ fetch('https://store.zapier.com/api/records?secret=GodoRihdRuwd1~')
 
 /* Carousel */
 
-const glider = new Glider(document.querySelector('.glider'), {
-    slidesToShow: 1,
-    slidesToScroll: 'auto',
-    dots: '.dots',
-});
+const gliderComponent = document.querySelector('.glider');
 
-function sliderAuto(slider, miliseconds) {
-    const slidesCount = slider.track.childElementCount;
-    let slideTimeout = null;
-    let nextIndex = 1;
-
-    const slide = () => {
-        slideTimeout = setTimeout(() => {
-            if (nextIndex >= slidesCount) {
-                nextIndex = 0;
-            }
-            slider.scrollItem(nextIndex++); // eslint-disable-line
-        }, miliseconds);
-    };
-
-    slider.ele.addEventListener('glider-animated', () => {
-        window.clearInterval(slideTimeout);
-        slide();
+if (gliderComponent) {
+    const glider = new Glider(gliderComponent, {
+        slidesToShow: 1,
+        slidesToScroll: 'auto',
+        dots: '.dots',
     });
 
-    slide();
-}
+    const sliderAuto = (slider, miliseconds) => {
+        const slidesCount = slider.track.childElementCount;
+        let slideTimeout = null;
+        let nextIndex = 1;
 
-sliderAuto(glider, 5000);
+        const slide = () => {
+            slideTimeout = setTimeout(() => {
+                if (nextIndex >= slidesCount) {
+                    nextIndex = 0;
+                }
+                slider.scrollItem(nextIndex++); // eslint-disable-line
+            }, miliseconds);
+        };
+
+        slider.ele.addEventListener('glider-animated', () => {
+            window.clearInterval(slideTimeout);
+            slide();
+        });
+
+        slide();
+    };
+
+    sliderAuto(glider, 5000);
+}
