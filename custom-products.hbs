@@ -1,0 +1,114 @@
+{{!< default}}
+
+<script charset="utf-8">
+
+const register = (e, product, id) => {
+    e.preventDefault();
+
+    const inputs = document.querySelectorAll('input');
+    const email = inputs[id].value;
+
+    const error = document.querySelector(`#product-${id} .error`);
+    const success = document.querySelector(`#product-${id} .success`);
+
+    const regex = new RegExp("[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+");
+
+    if (!regex.test(email)) {
+        error.classList.remove('hidden');
+        return false;
+    } else {
+        error.classList.add('hidden');
+    }
+
+    fetch('https://hooks.zapier.com/hooks/catch/4662754/oqdtxb8/', {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify({ product, email }),
+    }).then(() => {
+        success.classList.remove('hidden');
+    });
+};
+
+</script>
+
+{{#post}}
+    <section class="pt-20">
+        <h1 class="text-center font-bold text-3xl p-2 lg:p-0">Protégez, sécurisez, automatisez et hackez votre vie.</h1>
+        <h2 class="text-center md:text-xl mb-8 p-2 lg:p-0">Consultez mon catalogue complet de produits et découvrez tout ce que j'ai à vous offrir</h2>
+
+        <div class="container m-auto px-4 lg:max-w-screen-md">
+
+            <div class="grid gap-4">
+
+                <div id="product-1" class="bg-gray-800 overflow-hidden shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h1 class="text-3xl font-medium leading-tight mx-auto">L'art de disparaître</h1>
+
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Vie privée
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Sécurité
+                            </span>
+                        </div>
+
+                        <p class="font-bold">Le guide essentiel pour protéger votre vie privée.</p>
+
+                        <ul class="list-disc list-inside ml-4 my-4">
+                            <li class="my-2">Protégez et sécurisez votre smartphone Android</li>
+                            <li class="my-2">Protégez et sécurisez votre ordinateur (Windows, Linux) de manière radicale</li>
+                            <li class="my-2">Supprimez toutes vos données accessibles publiquement sur le web</li>
+                            <li class="my-2">Créez-vous une identité anonyme pour naviguer librement sur le web</li>
+                        </ul>
+
+                        <p>Devenez invisible aux yeux du gouvernement, des GAFAM (Google, Facebook, Amazon, Microsoft) et des hackers.</p>
+
+                        <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
+                        <button onClick="register(event, 'art-de-disparaitre', 1)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-4">{{ t "Join the waiting list" }}</button>
+                        <p class="pt-2 text-sm hidden success">{{ t "You registered successfully" }}</p>
+                        <p class="pt-2 text-sm hidden error">{{ t "Error: invalid email" }}</p>
+                    </div>
+                </div>
+
+                <div id="product-2" class="bg-gray-800 overflow-hidden shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h1 class="text-3xl font-medium leading-tight mx-auto">Liberté numérique</h1>
+
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Liberté
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Open-source
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Auto-hébergement
+                            </span>
+                        </div>
+
+                        <p class="font-bold">Créez votre propre espace numérique 100% libre.</p>
+
+                        <ul class="list-disc list-inside ml-4 my-4">
+                            <li class="my-2">Auto-héberger toutes vos données sur votre cloud personnel</li>
+                            <li class="my-2">Créez-vous un espace de stockage chiffré et décentralisé pour seulement 2€/To/Mois</li>
+                            <li class="my-2">Auto-hébergez tous vos e-mails sans vous prendre la tête</li>
+                        </ul>
+
+                        <p>Dites au revoir aux restrictions des systèmes propriétaires.</p>
+
+                        <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
+                        <button onClick="register(event, 'liberte-numerique', 2)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-4">{{ t "Join the waiting list" }}</button>
+                        <p class="pt-2 text-sm hidden success">{{ t "You registered successfully" }}</p>
+                        <p class="pt-2 text-sm hidden error">{{ t "Error: invalid email" }}</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+{{/post}}

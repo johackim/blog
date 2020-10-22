@@ -59,5 +59,9 @@
     "This post is for subscribers only": "Cet article est réservé aux abonnés",
     "You need to become a paid member in order to read this post...": "Vous devez devenir membre payant pour pouvoir lire cet article... ",
     "Currently, you're not a subscriber": "Actuellement, vous n'êtes pas abonné",
-    "You are subscribed to newsletter from {site}, but doesn't have a paid subscription to unlock full access": "Vous êtes abonné à la newsletter de {site}, mais vous ne disposez pas d'un abonnement payant pour débloquer l'accès complet"
+    "You are subscribed to newsletter from {site}, but doesn't have a paid subscription to unlock full access": "Vous êtes abonné à la newsletter de {site}, mais vous ne disposez pas d'un abonnement payant pour débloquer l'accès complet",
+    "Enrollment Closed - Get On The Waitlist": "Inscriptions fermées - Inscrivez-vous sur la liste d'attente",
+    "Join the waiting list": "Rejoindre la liste d'attente",
+    "You registered successfully": "Vous vous êtes inscrit avec succès",
+    "Error: invalid email": "Erreur : e-mail non valide"
 }
