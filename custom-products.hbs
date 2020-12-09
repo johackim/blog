@@ -80,28 +80,123 @@ const register = (e, product, id) => {
 
                         <div class="mb-4">
                             <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
-                                Liberté
+                                Auto-hébergement
                             </span>
                             <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
                                 Open-source
                             </span>
                             <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
-                                Auto-hébergement
+                                Liberté
                             </span>
                         </div>
 
                         <p class="font-bold">Créez votre propre espace numérique 100% libre.</p>
 
                         <ul class="list-disc list-inside ml-4 my-4">
-                            <li class="my-2">Auto-héberger toutes vos données sur votre cloud personnel</li>
-                            <li class="my-2">Créez-vous un espace de stockage chiffré et décentralisé pour seulement 2€/To/Mois</li>
-                            <li class="my-2">Auto-hébergez tous vos e-mails sans vous prendre la tête</li>
+                            <li class="my-2">Auto-hébergez toutes vos données sur votre cloud personnel</li>
+                            <li class="my-2">Chiffrez et stockez vos données pour seulement 2€/To/Mois</li>
                         </ul>
 
                         <p>Dites au revoir aux restrictions des systèmes propriétaires.</p>
 
                         <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
                         <button onClick="register(event, 'liberte-numerique', 2)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-4">{{ t "Join the waiting list" }}</button>
+                        <p class="pt-2 text-sm hidden success">{{ t "You registered successfully" }}</p>
+                        <p class="pt-2 text-sm hidden error">{{ t "Error: invalid email" }}</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 overflow-hidden shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h1 class="text-3xl font-medium leading-tight mx-auto">Devenez hébergeur web indépendant</h1>
+
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Sysadmin
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Docker
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Open-source
+                            </span>
+                        </div>
+
+                        <p class="font-bold">Créez une infrastructure automatisée pour héberger vos applications web sur vos propres serveurs.</p>
+
+                        <ul class="list-disc list-inside ml-4 my-4">
+                            <li class="my-2">Hébergez votre toute première application avec Docker</li>
+                            <li class="my-2">Automatisez le cycle de vie de vos applications avec Docker Swarm</li>
+                            <li class="my-2">Stockez toutes les données de vos applications sur un espace de stockage flexible</li>
+                            <li class="my-2">Gérez toute votre infrastructure depuis votre navigateur</li>
+                            <li class="my-2">Installez toute votre infrastructure en une ligne de commande avec Terraform et Ansible</li>
+                        </ul>
+
+                        <p>Le tout de manière 100% open-source.</p>
+
+                        <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
+                        <button onClick="register(event, 'devenir-hebergeur-web-independant', 3)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-4">{{ t "Join the waiting list" }}</button>
+                        <p class="pt-2 text-sm hidden success">{{ t "You registered successfully" }}</p>
+                        <p class="pt-2 text-sm hidden error">{{ t "Error: invalid email" }}</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 overflow-hidden shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h1 class="text-3xl font-medium leading-tight mx-auto">Culture libre</h1>
+
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Liberté
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Culture
+                            </span>
+                        </div>
+
+                        <p class="font-bold">Découvrez les secrets cachés d'internet pour tout télécharger librement (Films, Séries, Jeux, Musiques, Livres).</p>
+
+                        <ul class="list-disc list-inside ml-4 my-4">
+                            <li class="my-2">Téléchargez et synchronisez tous vos films et séries préférés sur votre écran de télévision</li>
+                            <li class="my-2">Jouez à tous vos jeux favoris depuis les meilleures ressources d'internet</li>
+                            <li class="my-2">Découvrez l'application ultime pour télécharger toutes les musiques de Deezer</li>
+                            <li class="my-2">Synchronisez librement des milliers de livres sur votre Kindle</li>
+                        </ul>
+
+                        <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
+                        <button onClick="register(event, 'culture-libre', 4)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-4">{{ t "Join the waiting list" }}</button>
+                        <p class="pt-2 text-sm hidden success">{{ t "You registered successfully" }}</p>
+                        <p class="pt-2 text-sm hidden error">{{ t "Error: invalid email" }}</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 overflow-hidden shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h1 class="text-3xl font-medium leading-tight mx-auto">Linux master</h1>
+
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Linux
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Arch Linux
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Automatisation
+                            </span>
+                        </div>
+
+                        <p class="font-bold">Comprenez et utilisez votre ordinateur sous Linux comme un expert.</p>
+
+                        <ul class="list-disc list-inside ml-4 my-4">
+                            <li class="my-2">Installez Arch Linux de A à Z uniquement en ligne de commande</li>
+                            <li class="my-2">Automatisez l'installation de Arch Linux pour l'installer en moins 5 minutes</li>
+                            <li class="my-2">Créez un environnement minimaliste pour gérer votre PC uniquement au clavier</li>
+                            <li class="my-2">Versionnez toute votre configuration pour pouvoir tout réinstaller facilement si besoin</li>
+                        </ul>
+
+                        <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
+                        <button onClick="register(event, 'linux-master', 5)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-4">{{ t "Join the waiting list" }}</button>
                         <p class="pt-2 text-sm hidden success">{{ t "You registered successfully" }}</p>
                         <p class="pt-2 text-sm hidden error">{{ t "Error: invalid email" }}</p>
                     </div>
