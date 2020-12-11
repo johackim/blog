@@ -36,10 +36,10 @@ const register = (e, product, id) => {
 
 {{#post}}
     <section class="pt-20">
-        <h1 class="text-center font-bold text-3xl p-2 lg:p-0">Protégez, sécurisez, automatisez et hackez votre vie.</h1>
-        <h2 class="text-center md:text-xl mb-8 p-2 lg:p-0">Consultez mon catalogue complet de produits et découvrez tout ce que j'ai à vous offrir</h2>
 
         <div class="container m-auto px-4 lg:max-w-screen-md">
+            <h1 class="text-center font-bold text-3xl">Protégez votre vie privée, auto-hébergez vos données et devenez libre numériquement.</h1>
+            <h2 class="text-center md:text-lg mb-8">Consultez mon catalogue complet de produits et découvrez tout ce que j'ai à vous offrir</h2>
 
             <div class="grid gap-4">
 
@@ -67,8 +67,11 @@ const register = (e, product, id) => {
 
                         <p>Devenez invisible aux yeux du gouvernement, des GAFAM (Google, Facebook, Amazon, Microsoft) et des hackers.</p>
 
-                        <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
-                        <button onClick="register(event, 'art-de-disparaitre', 1)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-4">{{ t "Join the waiting list" }}</button>
+                        <div class="mt-4">
+                            <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
+                            <button onClick="register(event, 'art-de-disparaitre', 1)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-2">{{ t "Join the waiting list" }}</button>
+                        </div>
+
                         <p class="pt-2 text-sm hidden success">{{ t "You registered successfully" }}</p>
                         <p class="pt-2 text-sm hidden error">{{ t "Error: invalid email" }}</p>
                     </div>
@@ -99,8 +102,11 @@ const register = (e, product, id) => {
 
                         <p>Dites au revoir aux restrictions des systèmes propriétaires.</p>
 
-                        <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
-                        <button onClick="register(event, 'liberte-numerique', 2)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-4">{{ t "Join the waiting list" }}</button>
+                        <div class="mt-4">
+                            <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
+                            <button onClick="register(event, 'liberte-numerique', 2)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-2">{{ t "Join the waiting list" }}</button>
+                        </div>
+
                         <p class="pt-2 text-sm hidden success">{{ t "You registered successfully" }}</p>
                         <p class="pt-2 text-sm hidden error">{{ t "Error: invalid email" }}</p>
                     </div>
@@ -112,13 +118,13 @@ const register = (e, product, id) => {
 
                         <div class="mb-4">
                             <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
+                                Auto-hébergement
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
                                 Sysadmin
                             </span>
                             <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
                                 Docker
-                            </span>
-                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium leading-4 bg-gray-500 text-gray-900">
-                                Open-source
                             </span>
                         </div>
 
@@ -134,8 +140,11 @@ const register = (e, product, id) => {
 
                         <p>Le tout de manière 100% open-source.</p>
 
-                        <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
-                        <button onClick="register(event, 'devenir-hebergeur-web-independant', 3)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-4">{{ t "Join the waiting list" }}</button>
+                        <div class="mt-4">
+                            <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
+                            <button onClick="register(event, 'devenir-hebergeur-web-independant', 3)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-2">{{ t "Join the waiting list" }}</button>
+                        </div>
+
                         <p class="pt-2 text-sm hidden success">{{ t "You registered successfully" }}</p>
                         <p class="pt-2 text-sm hidden error">{{ t "Error: invalid email" }}</p>
                     </div>
@@ -158,13 +167,16 @@ const register = (e, product, id) => {
 
                         <ul class="list-disc list-inside ml-4 my-4">
                             <li class="my-2">Téléchargez et synchronisez tous vos films et séries préférés sur votre écran de télévision</li>
-                            <li class="my-2">Jouez à tous vos jeux favoris depuis les ressources cachées d'internet</li>
+                            <li class="my-2">Jouez à tous vos jeux favoris à l'aide de ressources cachées d'internet</li>
                             <li class="my-2">Découvrez l'application ultime pour télécharger toutes les musiques de Deezer</li>
                             <li class="my-2">Synchronisez librement des milliers de livres sur votre Kindle</li>
                         </ul>
 
-                        <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
-                        <button onClick="register(event, 'culture-libre', 4)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-4">{{ t "Join the waiting list" }}</button>
+                        <div class="mt-4">
+                            <input type="email" class="p-2 rounded-md bg-gray-800 border border-gray-500 text-gray-200" placeholder="{{ t "Enter your email" }}" required />
+                            <button onClick="register(event, 'culture-libre', 4)" class="border rounded-md py-2 px-6 inline-block hover:border-white hover:text-white mt-2">{{ t "Join the waiting list" }}</button>
+                        </div>
+
                         <p class="pt-2 text-sm hidden success">{{ t "You registered successfully" }}</p>
                         <p class="pt-2 text-sm hidden error">{{ t "Error: invalid email" }}</p>
                     </div>
