@@ -45,6 +45,9 @@
 body {
     font-family: 'Roboto';
     @apply bg-gray-900 text-gray-300;
+}
+
+body:not(.salespage) {
     @apply h-screen flex flex-col justify-between;
 }
 
@@ -360,3 +363,15 @@ form[data-members-form].success .message-success {
 }
 
 /* purgecss end ignore */
+
+.salespage #content h1 {
+    @apply text-5xl font-normal text-center my-8;
+}
+
+.salespage #content h2 {
+    @apply text-3xl font-light text-center my-8;
+}
+
+.salespage #content h3 {
+    @apply text-xl font-light my-8;
+}
