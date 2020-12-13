@@ -1,6 +1,6 @@
 {{#is "tag"}}
 
-<nav class="mb-4 whitespace-no-wrap overflow-x-auto overflow-y-hidden">
+<nav class="mb-4 whitespace-nowrap overflow-x-auto overflow-y-hidden">
     <ol class="list-none p-0 inline-flex">
         <li class="flex items-center">
             <a href="/">{{ t "Home" }}</a>
@@ -49,7 +49,7 @@
 {{else}}
 
 {{#get "posts" limit=@config.posts_per_page page=page filter="tag:-nofeed" include="tags,authors" as |articles pages|}}
-<nav class="mb-4 whitespace-no-wrap overflow-x-auto overflow-y-hidden">
+<nav class="mb-4 whitespace-nowrap overflow-x-auto overflow-y-hidden">
     <ol class="list-none p-0 inline-flex">
         <li class="flex items-center">
             <a href="/">{{ t "Home" }}</a>
