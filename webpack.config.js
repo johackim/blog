@@ -26,28 +26,31 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                loaders: [
+                use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    { loader: 'css-loader' },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            ident: 'postcss',
-                            plugins: [
-                                require('tailwindcss')('./tailwind.config.js'), // eslint-disable-line
-                                require('autoprefixer'), // eslint-disable-line
-                                require('@fullhuman/postcss-purgecss')({ // eslint-disable-line
-                                    content: ['**/*.hbs'],
-                                    defaultExtractor: (content) => content.match(/[\w-/:.]+(?<!:)/g) || [],
-                                }),
-                            ],
+                            postcssOptions: {
+                                plugins: [
+                                    require('tailwindcss')('./tailwind.config.js'), // eslint-disable-line
+                                    require('autoprefixer'), // eslint-disable-line
+                                    require('@fullhuman/postcss-purgecss')({ // eslint-disable-line
+                                        content: ['**/*.hbs'],
+                                        defaultExtractor: (content) => content.match(/[\w-/:.]+(?<!:)/g) || [],
+                                    }),
+                                ],
+                            },
                         },
                     },
                 ],
             },
             {
-                test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,
-                loader: ['url-loader'],
+                test: /\.(woff|woff2)$/,
+                use: {
+                    loader: 'url-loader',
+                },
             },
         ],
     },
