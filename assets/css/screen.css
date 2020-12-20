@@ -90,6 +90,10 @@ a.active, a:hover {
     @apply text-xl font-bold;
 }
 
+#content h4 {
+    @apply text-lg font-bold;
+}
+
 #content p:first-child {
     @apply text-lg;
 }
