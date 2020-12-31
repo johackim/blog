@@ -137,8 +137,19 @@ a.active, a:hover {
 
 /* Bookmark */
 
-#content .kg-bookmark-author,
-#content .kg-bookmark-publisher { }
+#content .kg-bookmark-author {
+    @apply text-base;
+}
+
+#content .kg-bookmark-publisher {
+    @apply text-base font-light;
+}
+
+#content .kg-bookmark-publisher::before {
+    content: "•";
+    color: #e5eff5;
+    margin: 0 6px;
+}
 
 #content .kg-bookmark-card {
     @apply border border-solid border-gray-800;
